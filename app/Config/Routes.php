@@ -36,9 +36,29 @@ $routes->group('api', ['namespace' => 'App\Controllers\Salarie'], function ($rou
 
 // Module Onboarding (Personne 5)
 $routes->group('api', ['namespace' => 'App\Controllers\Onboarding'], function ($routes) {
-    // À remplir par la Personne 5
-    // Exemple : $routes->get('checklist', 'ItemOnboarding::index');
-    // Exemple : $routes->post('checklist', 'ItemOnboarding::create');
+    // Modèle de checklist
+    $routes->get('onboarding/checklist', 'ChecklistModele::index');
+    $routes->post('onboarding/checklist', 'ChecklistModele::store');
+    $routes->put('onboarding/checklist/(:num)', 'ChecklistModele::update/$1');
+    $routes->delete('onboarding/checklist/(:num)', 'ChecklistModele::delete/$1');
+
+    // Items de checklist par employé
+    $routes->get('onboarding/employes/(:num)/items', 'ItemOnboarding::index/$1');
+    $routes->get('onboarding/items', 'ItemOnboarding::index');
+    $routes->post('onboarding/items', 'ItemOnboarding::store');
+    $routes->get('onboarding/items/(:num)', 'ItemOnboarding::show/$1');
+    $routes->match(['put', 'patch'], 'onboarding/items/(:num)', 'ItemOnboarding::update/$1');
+    $routes->delete('onboarding/items/(:num)', 'ItemOnboarding::delete/$1');
+    $routes->post('onboarding/items/(:num)/valider', 'ItemOnboarding::valider/$1');
+    $routes->put('onboarding/items/(:num)/responsable', 'ItemOnboarding::assign/$1');
+    $routes->post('onboarding/items/(:num)/notifier', 'ItemOnboarding::notify/$1');
+
+    // Liaison, suivi, tableau de bord, historique
+    $routes->post('onboarding/employes/(:num)/checklist', 'Onboarding::link/$1');
+    $routes->get('onboarding/employes/(:num)/suivi', 'Onboarding::tracking/$1');
+    $routes->get('onboarding/suivi', 'Onboarding::tracking');
+    $routes->get('onboarding/dashboard', 'Onboarding::dashboard');
+    $routes->get('onboarding/historique', 'Onboarding::history');
 });
 
 // Routes de référence (communes)

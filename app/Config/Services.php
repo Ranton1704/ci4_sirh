@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Services\OnboardingService;
 use CodeIgniter\Config\BaseService;
 
 /**
@@ -29,4 +30,16 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+
+    /**
+     * Service métier du module Onboarding
+     */
+    public static function onboarding(bool $getShared = true): OnboardingService
+    {
+        if ($getShared) {
+            return static::getSharedInstance('onboarding');
+        }
+
+        return new OnboardingService();
+    }
 }

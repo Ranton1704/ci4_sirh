@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f5f6fa; color: #1f2937; }
+.topbar { display: flex; gap: 2rem; align-items: center; padding: .8rem 1.5rem; background: #1e3a8a; color: #fff; flex-wrap: wrap; }
+.topbar nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+.topbar a { color: #c7d2fe; text-decoration: none; }
+.topbar a.active, .topbar a:hover { color: #fff; text-decoration: underline; }
+.container { max-width: 1150px; margin: 1.5rem auto; padding: 0 1rem; }
+h1 { font-size: 1.5rem; margin: 0 0 1rem; }
+h2 { font-size: 1.15rem; margin: 1.5rem 0 .75rem; }
+.card { background: #fff; border-radius: 8px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1rem; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.stat { font-size: 2rem; font-weight: 700; }
+.muted { color: #6b7280; font-size: .9rem; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid #e5e7eb; vertical-align: middle; }
+th { background: #f9fafb; font-weight: 600; font-size: .85rem; text-transform: uppercase; color: #4b5563; }
+form .field { display: flex; flex-direction: column; gap: .3rem; margin-bottom: .8rem; }
+label { font-weight: 600; font-size: .9rem; }
+input, select, textarea { padding: .45rem .55rem; border: 1px solid #d1d5db; border-radius: 6px; font: inherit; }
+button { padding: .45rem .9rem; border: 0; border-radius: 6px; background: #2563eb; color: #fff; cursor: pointer; font: inherit; }
+button:disabled { opacity: .6; cursor: default; }
+button.secondary { background: #e5e7eb; color: #111827; }
+button.danger { background: #dc2626; }
+button.success { background: #16a34a; }
+.row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+.alert { padding: .6rem .9rem; border-radius: 6px; margin-bottom: 1rem; }
+.alert.error { background: #fee2e2; color: #991b1b; }
+.alert.success { background: #dcfce7; color: #166534; }
+.badge { display: inline-block; padding: .15rem .55rem; border-radius: 999px; font-size: .8rem; font-weight: 600; }
+.badge.grey { background: #e5e7eb; color: #374151; }
+.badge.blue { background: #dbeafe; color: #1e40af; }
+.badge.orange { background: #ffedd5; color: #9a3412; }
+.badge.green { background: #dcfce7; color: #166534; }
+.badge.red { background: #fee2e2; color: #991b1b; }
