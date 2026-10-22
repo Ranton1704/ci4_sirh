@@ -50,6 +50,21 @@
 # database.tests.port = 3306
 
 #--------------------------------------------------------------------
+# EMAIL (notifications du module Onboarding)
+#--------------------------------------------------------------------
+
+# email.fromEmail = 'no-reply@sirh.local'
+# email.fromName = 'SIRH - Onboarding'
+# email.protocol = 'smtp'
+# email.SMTPHost = 'localhost'
+# email.SMTPUser =
+# email.SMTPPass =
+# email.SMTPPort = 1025
+# email.SMTPCrypto =
+# email.onboardingNotifications = true
+# email.onboardingRecipients = 'rh@entreprise.mg'
+
+#--------------------------------------------------------------------
 # ENCRYPTION
 #--------------------------------------------------------------------
 
